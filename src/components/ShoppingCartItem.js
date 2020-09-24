@@ -3,7 +3,7 @@ import React from 'react';
 
 const Item = props => {
 
-	console.log('ShoppingCartItem.js: props: ', props)
+	// console.log('ShoppingCartItem.js: props: ', props)
 
 	return (
 		<div className="shopping-cart_item">

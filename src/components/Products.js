@@ -8,7 +8,7 @@ const Products = () => {
 
 	const {products, addItem } = useContext(shopContext);
 
-	console.log('Products.js: products: ', products)
+	// console.log('Products.js: products: ', products)
 
 	return (
 		<div className="products-container">
