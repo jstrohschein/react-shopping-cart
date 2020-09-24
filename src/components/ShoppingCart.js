@@ -5,7 +5,7 @@ import Item from './ShoppingCartItem';
 
 const ShoppingCart = () => {
 	
-	const { cart } = useContext(cartContext);
+	const { cart, removeItem } = useContext(cartContext);
 
 	console.log('ShoppingCart.js: cart: ', cart)
 
@@ -19,7 +19,7 @@ const ShoppingCart = () => {
 
 		<div className="shopping-cart">
 			{cart.map(item => (
-				<Item key={item.id} {...item} />
+				<Item key={item.id} {...item} removeItem={removeItem} />
 			))}
 			<div className="shopping-cart__checkout">
 				<p>Total: ${getCartTotal()}</p>
