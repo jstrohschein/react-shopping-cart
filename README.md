@@ -42,26 +42,26 @@ Before you get started, please take a few minutes and get acquainted with this a
 
 - In `App.js` there is a function called `addItem`. Finish writing the logic in this function to be able to add the given item to the shopping cart
 
-**STEP 2 - Creating ProductContext**
+**STEP 2 - Creating shopContext**
 
 - In `src`, create a new folder named `contexts`, this folder is going to be used to hold all of `context objects` we create.
 
-- Inside that folder create a new file named `ProductContext.js`
+- Inside that folder create a new file named `shopContext.js`
 
-- In this file, import the `createContext` function from the react library and create our `ProductContext`.
+- In this file, import the `createContext` function from the react library and create our `shopContext`.
 
-**STEP 3 - Providing data with ProductContext**
+**STEP 3 - Providing data with shopContext**
 
-- Now that we've created our `ProductContext` we can import into our `App.js`. Now we can start providing data across our application!
+- Now that we've created our `shopContext` we can import into our `App.js`. Now we can start providing data across our application!
 
-- Wrap all of your components/routes in `App.js` inside of `ProductContext.Provider` component.
+- Wrap all of your components/routes in `App.js` inside of `shopContext.Provider` component.
 
 - Next pass a value prop to your `Provider`.
 
 - In the value prop we'll pass in the products state, and an addItem function that will allow us to add books to the cart.
 
 ```js
-<ProductContext.Provider value={{ products, addItem }}>
+<shopContext.Provider value={{ products, addItem }}>
 ```
 
 - Now that we're providing our products state and addItem function we can simplify our products route a bit.
@@ -84,16 +84,16 @@ Before you get started, please take a few minutes and get acquainted with this a
 
 - After refactoring you'll notice a few errors... Don't worry we'll clean those up shortly!
 
-**STEP 4 - Consuming data with ProductContext**
+**STEP 4 - Consuming data with shopContext**
 
-- Now that our `ProductContext` is now providing data we can finally consume it! To do so let's head over to our `Products` component and import the `useContext` hook as well as our `ProductContext`.
+- Now that our `shopContext` is now providing data we can finally consume it! To do so let's head over to our `Products` component and import the `useContext` hook as well as our `shopContext`.
 
 - In the component, call the `useContext` hook and pass in the context object we want to use into it.
 
-- When we do this, `useContext` is going to return value passed by our `ProductContext` Provider `value` prop. In our case we're getting back an object with two properties. A `products` property and a `addItem` property. We can go ahead and destructure those.
+- When we do this, `useContext` is going to return value passed by our `shopContext` Provider `value` prop. In our case we're getting back an object with two properties. A `products` property and a `addItem` property. We can go ahead and destructure those.
 
 ```js
-const { products, addItem } = useContext(ProductContext);
+const { products, addItem } = useContext(shopContext);
 ```
 
 - Now that we have all of the data we need we can refactor our `Products` component from using props.
@@ -116,7 +116,7 @@ const { products, addItem } = useContext(ProductContext);
 
 **STEP 6 - Providing data with CartContext**
 
-- Let's go ahead and bring our newly created `CartContext` into our `App.js` and wrap all of our components inside of our `CartContext.Provider`. Make sure our `ProductContext.Provider` is still the root provider.
+- Let's go ahead and bring our newly created `CartContext` into our `App.js` and wrap all of our components inside of our `CartContext.Provider`. Make sure our `shopContext.Provider` is still the root provider.
 
 - Now pass a value prop to our `CartContext.Provider`, this value prop is going to contain our `cart` state.
 
@@ -151,9 +151,9 @@ We have now successfully converted our application into using `Context API` 🔥
 
 **MVP Requirements**
 
-- Create a `ProductContext` and a `CartContext`
-- Use the Provider Component from `ProductContext` and `CartContext` to provide data to child components
-- Consume data using the `useContext` hook from `ProductContext` and `CartContext`
+- Create a `shopContext` and a `CartContext`
+- Use the Provider Component from `shopContext` and `CartContext` to provide data to child components
+- Consume data using the `useContext` hook from `shopContext` and `CartContext`
 
 ### Task 2b: Exit Ticket
 
